@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "bro-cabs-vr",
+  "private_key_id": "a22aede1ea25c0986646f3f6ec03726641cd030a",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCz7crHe88b1prO\nK5WGBcsCtuXW9pBmmzpc8AMF07t46hLmqkLmXmgglg3vkgrgxfmhGeTcDjMBcNm1\nIfPgoloTB9pYKkQO1+sm/NUidGfiXespfwELFuictOfy/ZnZf6lfEoJ7zW5vgj0V\nZ6XfHM8IhEtCRtwDu1kgeeGUv7hvg1bHSnYivhaj5mgsIm71iNsk/h+vkOHD68ZE\n9R1aoePBGTINGxhfsVWGdUxd+k/HVSvvufGz0IXXWIzeKiCTxBqFaxnAD5RRZO6C\nFFj8ifwzNaG1wkwcf5Puo+Fqb2d0N+iiCaCow0Qm8Ko6dGRa+3WmpYnNscyRk7EI\nZg/sL2exAgMBAAECggEAH8G1i5XXjRNIiWD56Ai3twfu8wzbmbCGEYcvEWU4bnPp\n2Bpu6lf5St8RIJqHHvryPzPhx9EdwYBYfHa8o4YkHb3CFNOI5ZHIaD4xo/4lo7dt\n3QoUdg+aCKaJVcLa15+HlkcfDpjIiBfVjiSYCxP7moY2/kChbmsvpOK+JNHdzJh3\nAsWVOvUtiG9Qvc6xc9KrwzFSkAWh+/7M9tCTWyIOJ680sBUdBRTMeld33/d7D8f7\npVyD2KfIBxRnfyRTxOpOlwDrl15J++LE/NW4Uz90gdTaf6nPG/TP57Oa+h+2spru\nGoreiPHegYHMPvZfSAc+0H7+U23+EIZN/GN1oBrSzQKBgQDXWQDfUKz9GbSZDrlp\n1NBHNtqdqTF8t11AbLeqnBCvXzKPcOAFymKbTU8IV4PjYr7zIo2zFJ/vG/bRDIQT\np8xPdcaiFUnzEGmWm8LKqMS49UYZOjBvnIU8z8NUfullRVMSrh4rmoBo3u34YUiQ\nMF1wXSOuPP4PqwgJD9oKebW7swKBgQDV5R9tgquohUjd2h6bU2Z/7Q1nTdUR7gT5\nSxfA9w+X+1sQIoJyH1ku907lKH5ePqx/0LAwyR2sSqHWTHwXHoP834naCX/RaLbN\nt3jFK70foBUxwiRE4RgzCMGM/g4DXwoAb4b0Vy1KQ7t6yhXvVer0Z/y3SBoyoYeu\n56wtvKbNCwKBgCgiSE1WRcct4UCdQ+T7ao27JWc4vyZVLiXxnRFI4LsubMfa64Vo\nwJPdBpuxY70fDCNYDzyO3Xe8qHUxdfQL08IDWy+d9Bg+uM7+3IDUj0VBQP02oQxM\nCXDZ77dxp6HeF6tlk+3gb4ob8hHWX6WvvdpRIXM5nsfgwjCeKa7GHB6NAoGAdAQJ\n7uEwcICSzFqRvVgYQYz3dy/dQRNkOT+Ey9J1786TTwYY0QO14OadMWisWjwOXml4\nF44OfTQh4dWsfPG9T3yEDfKXFKOCe8RnSjL2KuAufsW53G5nLM80BGCMg0GacDAN\n+BwM4bopR2mzShTFEvoQNe1y4EGDEdhxKIGpy48CgYB8W9DL5g29y/TF82GPi4cs\nPXE+AkfvN5Ot3pGpk6wpJ6VdaJZxD/gtP0IyqKoqABw7Z2PCpS4oB/k/4vweVCbW\nusEo2thLQnZE1YEGdYZ10LayO41eypM+27XIKUDztLs2yb/ns+ne0nCEjzcYuefD\nsife/R7rQ3xLZb2aea0DLA==\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-fbsvc@bro-cabs-vr.iam.gserviceaccount.com",
+  "client_id": "108372407179683203598",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-fbsvc%40bro-cabs-vr.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
