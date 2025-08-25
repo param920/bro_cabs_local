@@ -42,7 +42,7 @@ class AppServiceProvider extends ServiceProvider
         Paginator::useBootstrap();
 
         // Defensive DB usage: safe in CI/console BEFORE migrations
-        // https://laravel.com/docs/11.x/database#configuration
+
 
         try{
             if (Schema::hasTable('settings')) {
