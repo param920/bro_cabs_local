@@ -2,7 +2,7 @@
 
 namespace App\Providers;
 
-use Schema;
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Str;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Contracts\Validation\Factory as Validator;
@@ -26,7 +26,7 @@ class AppServiceProvider extends ServiceProvider
      * @param \Illuminate\Contracts\Validation\Factory $validator
      * @return void
      */
-    public function boot(Validator $validator)
+    public function boot(Validator $validator) : void
     {
         // \Braintree_Configuration::environment(env('BTREE_ENVIRONMENT'));
         // \Braintree_Configuration::merchantId(env('BTREE_MERCHANT_ID'));
@@ -41,24 +41,46 @@ class AppServiceProvider extends ServiceProvider
 
         Paginator::useBootstrap();
 
-        if (Schema::hasTable('settings')) {
-            $navs = Setting::whereName('nav_color')->firstOrNew([]);
-            view()->share('navs', $navs);
+        // Defensive DB usage: safe in CI/console BEFORE migrations
 
-            $side = Setting::whereName('sidebar_color')->firstOrNew([]);
-            view()->share('side', $side);
 
-            $side_txt = Setting::whereName('sidebar_text_color')->firstOrNew([]);
-            view()->share('side_txt', $side_txt);
-        } else {
-
-            view()->share('navs', "#0B4DD8");
-
-            view()->share('side', "#2a3042");
-
-            view()->share('side_txt', "#a2a5af");
+        try{
+            if (Schema::hasTable('settings')) {
+                $navs = Setting::whereName('nav_color')->firstOrNew([]);
+                view()->share('navs', $navs);
+    
+                $side = Setting::whereName('sidebar_color')->firstOrNew([]);
+                view()->share('side', $side);
+    
+                $side_txt = Setting::whereName('sidebar_text_color')->firstOrNew([]);
+                view()->share('side_txt', $side_txt);
+            } else {
+    
+                // create a shareUiDefaultSettings() method
+                $this->shareUiDefaultSettings();
+    
+                view()->share('navs', "#0B4DD8");
+    
+                view()->share('side', "#2a3042");
+    
+                view()->share('side_txt', "#a2a5af");
+            }
+        } catch (\Throwable $e) {
+            // log the error
+            // DB not configured or connection not ready yet -> fall back to default settings
+            logger()->warning('Database not configured or connection not ready yet -> fall back to default used: '. $e->getMessage());
+            $this->shareUiDefaultSettings();
         }
+        
 
+    }
+
+    // sharedUiDefaultSettings()
+    protected function shareUiDefaultSettings()
+    {
+        view()->share('navs', "#0B4DD8");
+        view()->share('side', "#2a3042");
+        view()->share('side_txt', "#a2a5af");
     }
 
     /**
@@ -82,7 +104,7 @@ class AppServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    protected function loadCustomValidators()
+    protected function loadCustomValidators() : void
     {
         $customValidatorClass = 'App\Base\Validators\CustomValidators';
 
@@ -102,47 +124,51 @@ class AppServiceProvider extends ServiceProvider
      * @param string $class
      * @return void
      */
-    protected function extendValidator($name, $class)
+    protected function extendValidator($name, $class) : void
     {
         $method = 'validate' . Str::studly($name);
 
         $this->validator->extend($name, "{$class}@{$method}");
     }
 
-    public function nav() 
+    public function nav() : void
     {
-    
-    
+
+        try {
+            if (Schema::hasTable('settings')) {
+
             $navs = Setting::whereName('nav_color')->first();
-    
-    
-    
-         view()->share('navs', $navs);
-    
-    
-        }
-    
-        public function side() 
-        {
-        
+            view()->share('navs', $navs);
+            return;
+            }
+        } catch (\Throwable $e) {}
+        view()->share('navs', "#0B4DD8");
+    }
+
+    public function side() 
+    {
+        try {
+            if (Schema::hasTable('settings')) {
                 $side = Setting::whereName('sidebar_color')->first();
-        
-        
-             view()->share('side', $side);
-        
-        
+                view()->share('side', $side);
+                return;
             }
+        } catch (\Throwable $e) {}
+        view()->share('side', "#2a3042");
+    }
     
-            public function sidetxt() 
-        {
-        
+    public function sidetxt() 
+    {
+
+        try {
+            if(Schema::hasTable('settings')) {
                 $side_txt = Setting::whereName('sidebar_text_color')->first();
-        
-        
-             view()->share('side_txt', $side_txt);
-        
-        
+                view()->share('side_txt', $side_txt);
+                return;
             }
+        } catch (\Throwable $e) {}
+        view()->share('side_txt', "#a2a5af");
+    }
 
 
 }
