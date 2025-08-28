@@ -28,3 +28,33 @@
 #25 /var/www/html/Admin_Dashboard_Backend/artisan(35): Illuminate\\Foundation\\Console\\Kernel->handle()
 #26 {main}
 "} 
+[2025-08-28 07:07:07] local.ERROR: SQLSTATE[HY000] [1049] Unknown database 'Bro Cabs' {"exception":"[object] (PDOException(code: 1049): SQLSTATE[HY000] [1049] Unknown database 'Bro Cabs' at /var/www/html/Admin_Dashboard_Backend/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php:70)
+[stacktrace]
+#0 /var/www/html/Admin_Dashboard_Backend/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php(70): PDO->__construct()
+#1 /var/www/html/Admin_Dashboard_Backend/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php(45): Illuminate\\Database\\Connectors\\Connector->createPdoConnection()
+#2 /var/www/html/Admin_Dashboard_Backend/vendor/laravel/framework/src/Illuminate/Database/Connectors/MySqlConnector.php(24): Illuminate\\Database\\Connectors\\Connector->createConnection()
+#3 /var/www/html/Admin_Dashboard_Backend/vendor/laravel/framework/src/Illuminate/Database/Connectors/ConnectionFactory.php(184): Illuminate\\Database\\Connectors\\MySqlConnector->connect()
+#4 [internal function]: Illuminate\\Database\\Connectors\\ConnectionFactory->Illuminate\\Database\\Connectors\\{closure}()
+#5 /var/www/html/Admin_Dashboard_Backend/vendor/laravel/framework/src/Illuminate/Database/Connection.php(1064): call_user_func()
+#6 /var/www/html/Admin_Dashboard_Backend/vendor/laravel/framework/src/Illuminate/Database/Connection.php(1014): Illuminate\\Database\\Connection->getPdo()
+#7 /var/www/html/Admin_Dashboard_Backend/vendor/laravel/framework/src/Illuminate/Database/Connection.php(994): Illuminate\\Database\\Connection->getDoctrineConnection()
+#8 /var/www/html/Admin_Dashboard_Backend/vendor/grimzy/laravel-mysql-spatial/src/MysqlConnection.php(29): Illuminate\\Database\\Connection->getDoctrineSchemaManager()
+#9 /var/www/html/Admin_Dashboard_Backend/vendor/grimzy/laravel-mysql-spatial/src/Connectors/ConnectionFactory.php(27): Grimzy\\LaravelMysqlSpatial\\MysqlConnection->__construct()
+#10 /var/www/html/Admin_Dashboard_Backend/vendor/laravel/framework/src/Illuminate/Database/Connectors/ConnectionFactory.php(75): Grimzy\\LaravelMysqlSpatial\\Connectors\\ConnectionFactory->createConnection()
+#11 /var/www/html/Admin_Dashboard_Backend/vendor/laravel/framework/src/Illuminate/Database/Connectors/ConnectionFactory.php(50): Illuminate\\Database\\Connectors\\ConnectionFactory->createSingleConnection()
+#12 /var/www/html/Admin_Dashboard_Backend/vendor/laravel/framework/src/Illuminate/Database/DatabaseManager.php(140): Illuminate\\Database\\Connectors\\ConnectionFactory->make()
+#13 /var/www/html/Admin_Dashboard_Backend/vendor/laravel/framework/src/Illuminate/Database/DatabaseManager.php(95): Illuminate\\Database\\DatabaseManager->makeConnection()
+#14 /var/www/html/Admin_Dashboard_Backend/vendor/laravel/framework/src/Illuminate/Support/Facades/Schema.php(49): Illuminate\\Database\\DatabaseManager->connection()
+#15 /var/www/html/Admin_Dashboard_Backend/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(166): Illuminate\\Support\\Facades\\Schema::getFacadeAccessor()
+#16 /var/www/html/Admin_Dashboard_Backend/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(255): Illuminate\\Support\\Facades\\Facade::getFacadeRoot()
+#17 /var/www/html/Admin_Dashboard_Backend/app/Providers/MailConfigServiceProvider.php(28): Illuminate\\Support\\Facades\\Facade::__callStatic()
+#18 /var/www/html/Admin_Dashboard_Backend/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(682): App\\Providers\\MailConfigServiceProvider->register()
+#19 /var/www/html/Admin_Dashboard_Backend/vendor/laravel/framework/src/Illuminate/Foundation/ProviderRepository.php(75): Illuminate\\Foundation\\Application->register()
+#20 /var/www/html/Admin_Dashboard_Backend/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(659): Illuminate\\Foundation\\ProviderRepository->load()
+#21 /var/www/html/Admin_Dashboard_Backend/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/RegisterProviders.php(17): Illuminate\\Foundation\\Application->registerConfiguredProviders()
+#22 /var/www/html/Admin_Dashboard_Backend/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(237): Illuminate\\Foundation\\Bootstrap\\RegisterProviders->bootstrap()
+#23 /var/www/html/Admin_Dashboard_Backend/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(310): Illuminate\\Foundation\\Application->bootstrapWith()
+#24 /var/www/html/Admin_Dashboard_Backend/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(127): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#25 /var/www/html/Admin_Dashboard_Backend/artisan(35): Illuminate\\Foundation\\Console\\Kernel->handle()
+#26 {main}
+"} 
