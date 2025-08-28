@@ -254,6 +254,7 @@ class LoginController extends BaseLoginController
         }
 
         if (!$user->isActive()) {
+            
             $this->throwAccountDisabledException($field);
         }
     }
