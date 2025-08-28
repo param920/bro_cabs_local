@@ -2,7 +2,8 @@
 
       $paystack_initialize_url = 'https://api.paystack.co/transaction/initialize';
 
-        $secret_key = "sk_live_b3c282a070dcd41d7dc9425d6d7dad7af48c4f02";
+        
+        $secret_key = env('PAY_STACK_SECRET_KEY');
         $headers = [
             'Authorization:Bearer '.$secret_key,
             'Content-Type:application/json'
