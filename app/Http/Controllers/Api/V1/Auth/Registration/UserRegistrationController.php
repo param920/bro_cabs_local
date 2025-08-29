@@ -162,18 +162,21 @@ class UserRegistrationController extends LoginController
     public function register(UserRegistrationRequest $request)
     {
         $mobileUuid = $request->input('uuid');
+       
 
         $country_id =  $this->country->where('dial_code', $request->input('country'))->pluck('id')->first();
-
+        
         $validate_exists_email = $this->user->belongsTorole(Role::USER)->where('email', $request->email)->exists();
-
+        
         if ($validate_exists_email) {
 
-             if($request->is_web){
+           
+
+            if ($request->is_web) {
 
                 $user = $this->user->belongsTorole(Role::USER)->where('email', $request->email)->first();
 
-                return $this->authenticateAndRespond($user, $request, $needsToken=true);
+                return $this->authenticateAndRespond($user, $request, $needsToken = true);
 
             }
             $this->throwCustomException('Provided email has already been taken');
@@ -245,9 +248,12 @@ class UserRegistrationController extends LoginController
         if (env('APP_FOR')=='demo' && $request->has('company_key') && $request->input('company_key')) {
             $user_params['company_key'] = $request->input('company_key');
         }
+
         if ($request->has('password') && $request->input('password')) {
+
             $user_params['password'] = bcrypt($request->input('password'));
         }
+
         $user = $this->user->create($user_params);
 
         // $this->otpHandler->delete($mobileUuid);
@@ -298,8 +304,8 @@ class UserRegistrationController extends LoginController
 
         //dispatch(new SendMailNotification($mail_template, $user_mail));
 
-    /*mail Template*/
-}
+        /*mail Template*/
+    }
         if ($user) {
             return $this->authenticateAndRespond($user, $request, $needsToken=true);
         }

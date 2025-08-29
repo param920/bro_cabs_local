@@ -551,13 +551,13 @@ class LoginController extends ApiController
             $user->fresh();
 
             if ($request->has('password')) {
-            //     return $this->issueToken([
-            //     'grant_type' => 'password',
-            //     'client_id' => $client_tokens->id,
-            //     'client_secret' => $client_tokens->secret,
-            //     'username' => $request->input($this->getLoginIdentifier()),
-            //     'password' => $request->input('password'),
-            // ]);
+                //     return $this->issueToken([
+                //     'grant_type' => 'password',
+                //     'client_id' => $client_tokens->id,
+                //     'client_secret' => $client_tokens->secret,
+                //     'username' => $request->input($this->getLoginIdentifier()),
+                //     'password' => $request->input('password'),
+                // ]);
                 $client_tokens = DB::table('oauth_clients')->where('personal_access_client', 1)->first();
 
                 $token = $user->createToken('personal_access', [])->accessToken;
