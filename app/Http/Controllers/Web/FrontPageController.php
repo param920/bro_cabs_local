@@ -23,9 +23,12 @@ class FrontPageController extends Controller
 
     public function index()
     {
+        
         $host_name = request()->getHost();
 
         $conditional_host = explode('.',$host_name);
+
+        
 
         if($conditional_host[0] =='tagxi-super-bidding-docs'){
 
@@ -171,7 +174,9 @@ class FrontPageController extends Controller
         return redirect('dispatch/home');
 
         }
+        
         $data=FrontPage::first();
+
         $p=Storage::disk(env('FILESYSTEM_DRIVER'))->url(file_path($this->uploadPath(),''));
         //return view('admin.layouts.web_header',compact('data','p'));
         return view ('webfront.index',compact('data','p'));

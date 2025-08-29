@@ -12,7 +12,7 @@
   <!-- Libs CSS -->
     @include('admin.layouts.web_common_styles')
 
-  <title>{{ app_name() ?? 'Tagxi' }}</title>
+  <title>{{ app_name() ?? 'Bro Cabs' }}</title>
 <style>
   .driver a.nav-link {
   font-size: 14px;  
